@@ -1,0 +1,10 @@
+int main() {
+    int x = 2;
+    const double & y = x; // 若參考型態不同，產生一個new memory space去儲存 x 轉成doulbe的資料，並使y -> x ， 為何要用const可以?，因為若沒有用const 修改y的資料實際上是修改到剛新增的資料。 
+    cout << "x address: " << &x << " y address: " << &y; 
+    double a = 2.4;
+    double b = 4.2;
+    const double & c = a + b;//由於指定給參考的值是rvalue，rvalue無法放在 = 左邊 例如 a + b = 6 這是不合法的 ， 因此只能用const去存
+    return 0;
+
+}
